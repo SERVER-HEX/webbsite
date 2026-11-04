@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b18">
+<meta name="description" content="India's best SMM panel. Premium social growth powered by instant delivery and seamless INR checkout.">
+<title>Tushar SMM Panel — Premium Growth</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a48cff'/><stop offset='1' stop-color='%237be6df'/></linearGradient></defs><rect width='32' height='32' rx='9' fill='url(%23g)'/><text x='16' y='21.5' font-family='Arial,sans-serif' font-size='11.5' font-weight='800' fill='%2310152c' text-anchor='middle'>TS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --night: #080b18;
+  --lav: #9983ff;
+  --cyan: #78e3df;
+  --lime: #d5ff9b;
+  --blue: #0ea5e9;
+  --display: "Manrope", sans-serif;
+  --serif: "Instrument Serif", serif;
+  --mono: "DM Mono", monospace;
+
+  --glass-bg: linear-gradient(160deg, #182046d9, #0d1230d9);
+  --glass-border: #c7d5ff26;
+  --glass-shadow: 0 18px 38px #00000073, inset 0 1px 0 #ffffff14;
+
+  --ease: cubic-bezier(.16, .79, .2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--night);
+  color: #fff;
+  font-family: var(--display);
+  overflow-x: clip;          /* was: hidden — keeps position:sticky working */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; border: 0; background: none; }
+
+/* ============ BACKGROUND ============ */
+.screen-bg {
+  position: fixed; inset: 0; z-index: -2;
+  background: radial-gradient(ellipse at 50% 47%, #25285b 0, #111631 35%, #080b18 76%);
+}
+.grid {
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    linear-gradient(#b9caff0c 1px, transparent 1px),
+    linear-gradient(90deg, #b9caff0c 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse at center, #000 0, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0, transparent 70%);
+}
+.aurora {
+  position: fixed; border-radius: 50%; z-index: -1;
+  filter: blur(55px); opacity: .42;
+  animation: drift 7s ease-in-out infinite;
+}
+.a { width: 340px; height: 340px; background: #6852d1; left: -110px; top: -90px; }
+.b { width: 360px; height: 360px; background: #177b91; right: -130px; bottom: -130px; animation-delay: -3s; }
+.c { width: 180px; height: 180px; background: #8c64ca; right: 19%; top: 18%; animation-delay: -1s; }
+@keyframes drift { 50% { transform: translate(35px, 20px) scale(1.12); } }
+
+/* ============ LAYOUT ============ */
+.wrap {
+  width: 100%; max-width: 1200px; margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+  position: relative; z-index: 10;
+}
+
+/* ============ HEADER ============ */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(8, 11, 24, 0.7);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(199, 213, 255, 0.08);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 800 13px var(--display); letter-spacing: .07em; }
+.logo-mark {
+  height: 32px; width: 32px; border-radius: 9px;
+  background: linear-gradient(135deg, #a48cff, #7be6df);
+  color: #10152c; display: grid; place-items: center;
+  font-size: 10px; letter-spacing: -.1em;
+  box-shadow: 0 0 27px #937dff65;
+}
+.nav-btn {
+  padding: 10px 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px; color: #fff;
+  font-weight: 600; font-size: 13px;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all .2s var(--ease);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.nav-btn:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px rgba(120, 227, 223, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: clamp(60px, 10vh, 120px) 0 60px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 18px 8px 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  box-shadow: var(--glass-shadow);
+  font: 500 12px var(--mono);
+  color: #c9d0e8;
+  margin-bottom: 32px;
+}
+.blue-tick {
+  width: 20px; height: 20px;
+  filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.6));
+  animation: pulseTick 2s ease-in-out infinite;
+}
+@keyframes pulseTick {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+.live-count { font-weight: 700; color: #fff; }
+.live-count.bump { color: var(--lime); text-shadow: 0 0 12px var(--lime); }
+
+.hero h1 {
+  font: 800 clamp(48px, 7vw, 84px)/1.05 var(--display);
+  letter-spacing: -.04em; margin-bottom: 24px;
+}
+.hero h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  letter-spacing: -.01em;
+  background: linear-gradient(100deg, var(--lime), var(--cyan) 60%, var(--lav));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-right: 8px;
+}
+
+.platform-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px 8px 10px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  box-shadow: var(--glass-shadow);
+  font-size: 14px; font-weight: 600; color: #e2e6f5;
+  transition: all .3s var(--ease);
+}
+.chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 15px rgba(120,227,223,0.1);
+}
+.chip-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+.chip-icon svg { width: 14px; height: 14px; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 36px;
+  background: linear-gradient(105deg, var(--lime), var(--cyan));
+  color: #080b18;
+  font-size: 15px; font-weight: 800;
+  border-radius: 999px;
+  box-shadow: 0 12px 35px rgba(131, 233, 223, 0.3);
+  transition: all .3s var(--ease);
+  margin-bottom: 40px;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(131, 233, 223, 0.5);
+}
+.btn-primary svg { width: 16px; height: 16px; transition: transform .2s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+
+.hero-trust {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;
+  font: 500 13px var(--mono); color: #9aa4c6;
+  border-top: 1px solid rgba(199, 213, 255, 0.1);
+  padding-top: 30px; max-width: 700px;
+}
+.trust-item { display: flex; align-items: center; gap: 8px; }
+.trust-item svg { width: 16px; height: 16px; color: var(--lime); }
+
+/* ============ MARQUEE ============ */
+.marquee-container {
+  width: 100%; overflow: hidden;
+  background: rgba(8, 11, 24, 0.5);
+  border-top: 1px solid rgba(199, 213, 255, 0.08);
+  border-bottom: 1px solid rgba(199, 213, 255, 0.08);
+  padding: 20px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;   /* trailing gap so the loop seam is exact */
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.marquee-item {
+  display: flex; align-items: center; gap: 10px;
+  font: 600 14px var(--display); color: #7f89ad;
+  transition: color .2s;
+}
+.marquee-item:hover { color: #fff; }
+.marquee-icon { width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center; }
+.marquee-icon svg { width: 12px; height: 12px; }
+
+/* ============ FOOTER ============ */
+.footer { padding: 80px 0 40px; background: linear-gradient(to bottom, transparent, rgba(8, 11, 24, 0.9)); }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 60px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 16px; }
+.footer-desc { font-size: 14px; line-height: 1.6; color: #9aa4c6; max-width: 320px; }
+.payment-methods { display: flex; flex-wrap: wrap; gap: 8px; }
+.pay-pill {
+  padding: 6px 12px; border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(199, 213, 255, 0.1);
+  font: 500 10px var(--mono); color: #c9d0e8; letter-spacing: .05em;
+}
+.footer-col h4 {
+  font: 600 12px var(--mono); color: #fff;
+  letter-spacing: .1em; text-transform: uppercase; margin-bottom: 20px;
+}
+.footer-col a { display: block; font-size: 14px; color: #9aa4c6; margin-bottom: 12px; transition: color .2s; }
+.footer-col a:hover { color: var(--cyan); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(199, 213, 255, 0.08);
+  font: 500 12px var(--mono); color: #7f89ad;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) {
+  .hero { padding: 40px 0; }
+  .hero h1 { font-size: clamp(38px, 10vw, 54px); }
+  .platform-chips { gap: 8px; }
+  .chip { font-size: 12px; padding: 6px 14px 6px 8px; }
+  .chip-icon { width: 22px; height: 22px; }
+  .chip-icon svg { width: 12px; height: 12px; }
+  .btn-primary { width: 100%; justify-content: center; }
+  .hero-trust { flex-direction: column; align-items: center; gap: 12px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .marquee-track { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="screen-bg"></div>
+<div class="grid"></div>
+<div class="aurora a"></div>
+<div class="aurora b"></div>
+<div class="aurora c"></div>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="logo" href="dashboard.html">
+      <span class="logo-mark">TS</span>
+      TUSHAR SMM
+    </a>
+    <a class="nav-btn" href="dashboard.html">
+      Sign in
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main class="wrap hero">
+  <div class="hero-eyebrow">
+    <svg class="blue-tick" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 0L58.5 8.5L70 5L75.5 16L87.5 17.5L87.5 29.5L98.5 35L92.5 45L100 53L92.5 61L98.5 71L87.5 76.5L87.5 88.5L75.5 90L70 101L58.5 97.5L50 106L41.5 97.5L30 101L24.5 90L12.5 88.5L12.5 76.5L1.5 71L7.5 61L0 53L7.5 45L1.5 35L12.5 29.5L12.5 17.5L24.5 16L30 5L41.5 8.5L50 0Z" fill="#0ea5e9"/>
+      <path d="M33 50L45 62L70 37" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Trusted by <span class="live-count" id="liveCount" aria-live="polite">2,038</span>+ Indian creators
+  </div>
+
+  <h1>More reach.<br><em>Zero</em> wait.</h1>
+
+  <div class="platform-chips">
+    <div class="chip">
+      <span class="chip-icon" style="background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg>
+      </span>
+      Instagram
+    </div>
+    <div class="chip">
+      <span class="chip-icon" style="background: #FF0000;">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+      YouTube
+    </div>
+    <div class="chip">
+      <span class="chip-icon" style="background: #1877F2; color: #fff; font-weight: 800; font-size: 14px;">f</span>
+      Facebook
+    </div>
+    <div class="chip">
+      <span class="chip-icon" style="background: #010101;">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M14 3v11a3 3 0 1 1-3-3v3a1 1 0 1 0 1 1V3h2a4 4 0 0 0 4 4v2a6 6 0 0 1-4-2z"/></svg>
+      </span>
+      TikTok
+    </div>
+  </div>
+
+  <a class="btn-primary" href="dashboard.html">
+    Start growing now
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+  </a>
+
+  <div class="hero-trust">
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Instant delivery
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+      Non-drop guarantee
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      24/7 support
+    </span>
+  </div>
+</main>
+
+<div class="marquee-container">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span class="marquee-item"><span class="marquee-icon" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg></span>Instagram</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#FF0000"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>YouTube</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#010101"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14 3v11a3 3 0 1 1-3-3v3a1 1 0 1 0 1 1V3h2a4 4 0 0 0 4 4v2a6 6 0 0 1-4-2z"/></svg></span>TikTok</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#1877F2;color:#fff;font-weight:800;font-size:12px">f</span>Facebook</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#000;color:#fff;font-weight:800;font-size:11px">𝕏</span>Twitter / X</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#0088cc"><svg viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></span>Telegram</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span class="marquee-item"><span class="marquee-icon" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg></span>Instagram</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#FF0000"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>YouTube</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#010101"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14 3v11a3 3 0 1 1-3-3v3a1 1 0 1 0 1 1V3h2a4 4 0 0 0 4 4v2a6 6 0 0 1-4-2z"/></svg></span>TikTok</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#1877F2;color:#fff;font-weight:800;font-size:12px">f</span>Facebook</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#000;color:#fff;font-weight:800;font-size:11px">𝕏</span>Twitter / X</span>
+      <span class="marquee-item"><span class="marquee-icon" style="background:#0088cc"><svg viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></span>Telegram</span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="dashboard.html">
+          <span class="logo-mark">TS</span>
+          Tushar SMM Panel
+        </a>
+        <p class="footer-desc">India's best SMM panel. Premium social growth powered by instant delivery and seamless INR checkout.</p>
+        <div class="payment-methods">
+          <span class="pay-pill">UPI</span>
+          <span class="pay-pill">GPay</span>
+          <span class="pay-pill">PhonePe</span>
+          <span class="pay-pill">Paytm</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="dashboard.html">Support</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Refund policy</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">WhatsApp</a>
+        <a href="#">Telegram</a>
+        <a href="#">Email</a>
+        <a href="dashboard.html">Sign in →</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Tushar SMM Panel</span>
+      <span>Made in India · All prices in INR</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var el = document.getElementById('liveCount');
+  if (!el) return;
+
+  var count = 2038;
+  el.textContent = count.toLocaleString('en-IN');
+
+  function bump() {
+    count += 1;
+    el.textContent = count.toLocaleString('en-IN');
+    el.classList.add('bump');
+    setTimeout(function () { el.classList.remove('bump'); }, 900);
+    setTimeout(bump, 15000 + Math.random() * 20000);
+  }
+
+  setTimeout(bump, 5000 + Math.random() * 5000);
+})();
+</script>
+</body>
+</html>
